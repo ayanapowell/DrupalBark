@@ -1,0 +1,18 @@
+<?php
+
+function custom_follow_networks_alter(&$networks, $uid = 0) {
+    print '<pre>';
+    print_r('$networks[$uid]');
+    echo('$networks[$uid]');
+    print '</pre>';
+    exit;
+
+    $networks[$uid]['redbubble'] = array (
+        'title' => t('Redbubble'),
+        'domain' => 'redbubble.com'
+    );
+    $networks[$uid]['etsy'] = array (
+        'title' => t('Etsy'),
+        'domain' => 'etsy.com'
+    );
+}

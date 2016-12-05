@@ -1,0 +1,8 @@
+<?php
+
+function follow_custom_networks_alter(&$networks, $uid=0) {
+    $networks[$uid]['etsy'] = array(
+        'title' => t('Etsy'),
+        'domain' => 'etsy.com'
+    );
+}
