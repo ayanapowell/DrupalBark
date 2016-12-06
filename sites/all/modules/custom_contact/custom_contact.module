@@ -1,11 +1,6 @@
 <?php
 function custom_contact_form_alter (&$form, &$form_state, $form_id) {
   if ($form_id == 'contact_site_form') {
-    //   print '<pre>';
-    //   print_r($form);
-    //   print '</pre>';
-    //   exit;
-
       $form['copy']['#default_value'] = 1; // Setting checkbox to true(send yourself copy)
       $form['copy']['#access'] = 0; // Hiding form input
       $form['subject']['#default_value'] = "Feedback"; // Setting subject value
