@@ -1,0 +1,27 @@
+<?php
+
+function random_recipe_menu() {
+    $items['random_recipe'] = array(
+        'title' => 'Surprise Me!',
+        'page callback' => 'find_random_recipe',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+function find_random_recipe() {
+    $node_type = "recipe";
+
+    $result = db_query("SELECT nid FROM node WHERE type = :nodeType ", array(':nodeType'=>$node_type));
+
+    $nids = array();
+    foreach ($result as $obj) {
+      $nids[] = $obj->nid;
+    }
+
+    $length = count($nids);
+    $random_id = $nids[rand(0, $length-1)];
+
+    drupal_goto($path = 'node/' . $random_id);
+}

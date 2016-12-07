@@ -1,0 +1,5 @@
+name = Random Recipe
+description = Retrieve a random recipe
+core = 7.x
+package = Custom Modules
+files[] = random_recipe.module
