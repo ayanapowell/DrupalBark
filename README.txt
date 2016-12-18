@@ -1,5 +1,5 @@
 
-CONTENTS OF THIS FILE
+Bark
 ---------------------
 
  * About Drupal
